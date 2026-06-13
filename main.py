@@ -3,135 +3,321 @@ import logging
 import sys
 from pathlib import Path
 
+from sources.wikipedia_source import (
+    get_wikipedia_content,
+    WikipediaSourceError
+)
+
+from sources.news_source import (
+    get_news,
+    NewsSourceError
+)
+
+from sources.crawler import DeepCrawler
+from sources.article_extractor import ArticleExtractor
+from sources.image_crawler import ImageCrawler
+from sources.knowledge_builder import KnowledgeBuilder
+
 from pdf.report_builder import build_report
-from sources.news_source import NewsSourceError, get_news
-from sources.wikipedia_source import WikipediaSourceError, get_wikipedia_content
 
 
-DEFAULT_NEWS_LIMIT = 8
+DEFAULT_NEWS_LIMIT = 10
 
 
 def parse_args():
+
     parser = argparse.ArgumentParser(
-        description="Generate a detailed PDF research report for any topic."
+        description="Advanced Research Report Generator"
     )
+
     parser.add_argument(
         "topic",
         nargs="?",
-        help="Topic to research. If omitted, you will be prompted for it.",
+        help="Topic to research"
     )
+
     parser.add_argument(
         "-o",
         "--output-dir",
         default="reports",
-        help="Directory where the PDF report will be saved. Default: reports",
+        help="Output folder"
     )
+
     parser.add_argument(
         "--news-limit",
         type=int,
-        default=DEFAULT_NEWS_LIMIT,
-        help=f"Maximum number of news items to include. Default: {DEFAULT_NEWS_LIMIT}",
+        default=DEFAULT_NEWS_LIMIT
     )
+
     parser.add_argument(
         "--wiki-section-limit",
         type=int,
-        default=12,
-        help="Maximum number of Wikipedia sections to include. Default: 12",
+        default=15
     )
-    parser.add_argument(
-        "--no-article-content",
-        action="store_true",
-        help="Skip fetching full article text from news links.",
-    )
-    parser.add_argument(
-        "--article-timeout",
-        type=int,
-        default=12,
-        help="Timeout in seconds for each article content request. Default: 12",
-    )
+
     parser.add_argument(
         "--verbose",
-        action="store_true",
-        help="Show detailed progress and diagnostic logging.",
+        action="store_true"
     )
+
     return parser.parse_args()
 
 
 def configure_logging(verbose):
+
     level = logging.DEBUG if verbose else logging.INFO
+
     logging.basicConfig(
         level=level,
-        format="%(levelname)s: %(message)s",
+        format="%(levelname)s: %(message)s"
     )
-    if not verbose:
-        logging.getLogger("wikipediaapi").setLevel(logging.WARNING)
-        logging.getLogger("httpx").setLevel(logging.WARNING)
 
 
 def read_topic(topic):
-    value = topic or input("Enter topic: ")
+
+    value = topic or input(
+        "Enter topic: "
+    )
+
     value = value.strip()
+
     if len(value) < 2:
-        raise ValueError("Please provide a topic with at least 2 characters.")
+        raise ValueError(
+            "Topic must contain at least 2 characters."
+        )
+
     return value
 
 
+def collect_seed_urls(
+    wiki,
+    news
+):
+
+    urls = []
+
+    if wiki and wiki.get("url"):
+        urls.append(
+            wiki["url"]
+        )
+
+    for item in news:
+
+        url = (
+            item.get("article_url")
+            or item.get("link")
+        )
+
+        if url:
+            urls.append(url)
+
+    return list(
+        dict.fromkeys(urls)
+    )
+
+
 def main():
+
     args = parse_args()
-    configure_logging(args.verbose)
+
+    configure_logging(
+        args.verbose
+    )
 
     try:
-        topic = read_topic(args.topic)
-        news_limit = max(0, args.news_limit)
-        output_dir = Path(args.output_dir)
 
-        source_errors = []
+        topic = read_topic(
+            args.topic
+        )
 
-        logging.info("Collecting Wikipedia context for '%s'...", topic)
+        output_dir = Path(
+            args.output_dir
+        )
+
+        logging.info(
+            "Collecting Wikipedia content..."
+        )
+
         try:
-            wiki = get_wikipedia_content(topic, section_limit=max(1, args.wiki_section_limit))
-        except WikipediaSourceError as exc:
+
+            wiki = get_wikipedia_content(
+                topic,
+                section_limit=args.wiki_section_limit
+            )
+
+        except WikipediaSourceError:
+
             wiki = {}
-            source_errors.append(f"Wikipedia: {exc}")
-            logging.warning("%s", exc)
 
-        logging.info("Collecting current news for '%s'...", topic)
+        logging.info(
+            "Collecting news..."
+        )
+
         try:
+
             news = get_news(
                 topic,
-                limit=news_limit,
-                include_article_content=not args.no_article_content,
-                article_timeout=max(3, args.article_timeout),
+                limit=args.news_limit,
+                include_article_content=True
             )
-        except NewsSourceError as exc:
+
+        except NewsSourceError:
+
             news = []
-            source_errors.append(f"News: {exc}")
-            logging.warning("%s", exc)
 
-        if not wiki and not news:
-            logging.warning(
-                "No live sources returned content. The report will still include a source-status section."
+        logging.info(
+            "Preparing crawler..."
+        )
+
+        crawler = DeepCrawler()
+
+        seed_urls = collect_seed_urls(
+            wiki,
+            news
+        )
+
+        logging.info(
+            "Crawling %s URLs...",
+            len(seed_urls)
+        )
+
+        crawled_articles = crawler.crawl(
+            seed_urls=seed_urls,
+            max_pages=15
+        )
+
+        logging.info(
+            "Extracting article data..."
+        )
+
+        extractor = ArticleExtractor()
+
+        extracted_articles = []
+
+        for article in crawled_articles:
+
+            url = article.get("url")
+
+            if not url:
+                continue
+
+            extracted = extractor.extract(
+                url
             )
 
-        logging.info("Building PDF report...")
+            if extracted.get("text"):
+                extracted_articles.append(
+                    extracted
+                )
+
+        logging.info(
+            "Downloading images..."
+        )
+
+        image_crawler = ImageCrawler()
+
+        image_paths = []
+
+        for article in extracted_articles:
+
+            top_image = article.get(
+                "top_image"
+            )
+
+            if top_image:
+
+                path = (
+                    image_crawler
+                    .download_article_image(
+                        top_image
+                    )
+                )
+
+                if path:
+                    image_paths.append(
+                        path
+                    )
+
+        if wiki and wiki.get("url"):
+
+            try:
+
+                wiki_images = (
+                    image_crawler
+                    .download_page_images(
+                        wiki["url"],
+                        limit=5
+                    )
+                )
+
+                image_paths.extend(
+                    wiki_images
+                )
+
+            except Exception:
+                pass
+
+        image_paths = list(
+            dict.fromkeys(
+                image_paths
+            )
+        )
+
+        logging.info(
+            "Building knowledge base..."
+        )
+
+        builder = KnowledgeBuilder()
+
+        knowledge = builder.build(
+            topic=topic,
+            wiki_data=wiki,
+            news_articles=news,
+            crawled_articles=extracted_articles,
+            image_paths=image_paths
+        )
+
+        knowledge["statistics"] = (
+            builder.statistics(
+                knowledge
+            )
+        )
+
+        logging.info(
+            "Generating PDF..."
+        )
+
         report_path = build_report(
             topic=topic,
-            wiki=wiki,
-            news=news,
-            output_dir=output_dir,
-            source_errors=source_errors,
+            knowledge=knowledge,
+            output_dir=output_dir
         )
-        print(f"Report generated: {report_path}")
+
+        print()
+        print("=" * 60)
+        print(
+            "REPORT GENERATED SUCCESSFULLY"
+        )
+        print("=" * 60)
+        print(report_path)
+        print("=" * 60)
+
         return 0
 
-    except ValueError as exc:
-        logging.error("%s", exc)
-        return 1
     except KeyboardInterrupt:
-        logging.error("Report generation cancelled.")
+
+        logging.error(
+            "Process cancelled."
+        )
+
         return 130
+
     except Exception:
-        logging.exception("Unexpected error while generating the report.")
+
+        logging.exception(
+            "Unexpected error."
+        )
+
         return 1
 
 

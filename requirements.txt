@@ -4,3 +4,13 @@ requests
 beautifulsoup4
 feedparser
 pillow
+
+newspaper3k
+lxml
+lxml_html_clean
+
+python-dateutil
+tldextract
+cssselect
+feedfinder2
+jieba3k
