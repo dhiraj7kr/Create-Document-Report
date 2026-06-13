@@ -1,0 +1,6 @@
+reportlab
+wikipedia-api
+requests
+beautifulsoup4
+feedparser
+pillow
