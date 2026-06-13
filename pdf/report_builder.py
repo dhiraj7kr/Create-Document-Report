@@ -3,6 +3,7 @@ import re
 from datetime import datetime
 from pathlib import Path
 from html import escape
+
 from PIL import Image as PILImage
 
 from reportlab.lib import colors
@@ -29,19 +30,15 @@ from reportlab.platypus import (
     Image,
     HRFlowable,
     ListFlowable,
-    ListItem,
-    Table,
-    TableStyle
+    ListItem
 )
 
 
 CHAPTERS = [
-    "Executive Summary",
-    "Background Information",
-    "Timeline",
-    "Key Facts",
+    "Introduction",
+    "Image Gallery",
+    "Career and Contributions",
     "Recent Developments",
-    "Analysis",
     "References"
 ]
 
@@ -70,7 +67,9 @@ def paragraph(
 ):
 
     return Paragraph(
-        escape(clean_text(text)),
+        escape(
+            clean_text(text)
+        ),
         style
     )
 
@@ -80,18 +79,18 @@ def build_styles():
     styles = getSampleStyleSheet()
 
     styles["Title"].fontName = "Times-Bold"
-    styles["Title"].fontSize = 28
-    styles["Title"].leading = 34
+    styles["Title"].fontSize = 32
+    styles["Title"].leading = 40
     styles["Title"].alignment = TA_CENTER
 
-    styles["Heading1"].fontSize = 18
-    styles["Heading1"].leading = 24
+    styles["Heading1"].fontSize = 22
+    styles["Heading1"].leading = 28
 
-    styles["Heading2"].fontSize = 13
-    styles["Heading2"].leading = 18
+    styles["Heading2"].fontSize = 16
+    styles["Heading2"].leading = 22
 
-    styles["BodyText"].fontSize = 10.5
-    styles["BodyText"].leading = 15
+    styles["BodyText"].fontSize = 11
+    styles["BodyText"].leading = 18
     styles["BodyText"].alignment = TA_JUSTIFY
 
     styles.add(
@@ -135,13 +134,13 @@ def add_cover_page(
     story.append(
         Spacer(
             1,
-            1.2 * inch
+            2 * inch
         )
     )
 
     story.append(
         paragraph(
-            f"{topic} Research Report",
+            topic,
             styles["Title"]
         )
     )
@@ -149,18 +148,13 @@ def add_cover_page(
     story.append(
         Spacer(
             1,
-            20
+            25
         )
     )
 
-    add_rule(story)
-
     story.append(
         paragraph(
-            (
-                "Detailed Research Report "
-                "Generated From Multiple Sources"
-            ),
+            "A Comprehensive Research Biography",
             styles["Heading2"]
         )
     )
@@ -168,85 +162,18 @@ def add_cover_page(
     story.append(
         Spacer(
             1,
-            20
+            50
         )
     )
 
-    rows = [
-        [
-            "Topic",
-            topic
-        ],
-        [
-            "Generated On",
+    story.append(
+        paragraph(
             datetime.now().strftime(
                 "%d %B %Y"
-            )
-        ],
-        [
-            "Articles",
-            str(
-                len(
-                    knowledge.get(
-                        "articles",
-                        []
-                    )
-                )
-            )
-        ],
-        [
-            "News Items",
-            str(
-                len(
-                    knowledge.get(
-                        "news",
-                        []
-                    )
-                )
-            )
-        ],
-        [
-            "Images",
-            str(
-                len(
-                    knowledge.get(
-                        "images",
-                        []
-                    )
-                )
-            )
-        ]
-    ]
-
-    table = Table(
-        rows,
-        colWidths=[
-            2 * inch,
-            4 * inch
-        ]
-    )
-
-    table.setStyle(
-        TableStyle(
-            [
-                (
-                    "GRID",
-                    (0, 0),
-                    (-1, -1),
-                    0.5,
-                    colors.black
-                ),
-                (
-                    "BACKGROUND",
-                    (0, 0),
-                    (0, -1),
-                    colors.lightgrey
-                )
-            ]
+            ),
+            styles["Meta"]
         )
     )
-
-    story.append(table)
 
     story.append(
         PageBreak()
@@ -284,7 +211,7 @@ def add_contents(
     )
 
 
-def add_executive_summary(
+def add_introduction(
     story,
     knowledge,
     styles
@@ -292,8 +219,15 @@ def add_executive_summary(
 
     story.append(
         paragraph(
-            "Executive Summary",
+            "Chapter 1",
             styles["Heading1"]
+        )
+    )
+
+    story.append(
+        paragraph(
+            "Introduction",
+            styles["Heading2"]
         )
     )
 
@@ -318,180 +252,11 @@ def add_executive_summary(
             )
         )
 
-    keywords = knowledge.get(
-        "keywords",
-        []
-    )
-
-    if keywords:
-
-        story.append(
-            Spacer(
-                1,
-                10
-            )
-        )
-
-        story.append(
-            paragraph(
-                "Key Topics",
-                styles["Heading2"]
-            )
-        )
-
-        bullet_items = []
-
-        for keyword in keywords[:15]:
-
-            bullet_items.append(
-                ListItem(
-                    paragraph(
-                        keyword.title(),
-                        styles["BodyText"]
-                    )
-                )
-            )
-
-        story.append(
-            ListFlowable(
-                bullet_items,
-                bulletType="bullet"
-            )
-        )
-
     story.append(
         PageBreak()
     )
 
 
-def add_timeline(
-    story,
-    knowledge,
-    styles
-):
-
-    story.append(
-        paragraph(
-            "Timeline",
-            styles["Heading1"]
-        )
-    )
-
-    add_rule(story)
-
-    timeline = knowledge.get(
-        "timeline",
-        []
-    )
-
-    if not timeline:
-
-        story.append(
-            paragraph(
-                "No timeline data found.",
-                styles["BodyText"]
-            )
-        )
-
-        return
-
-    rows = [
-        [
-            "Year",
-            "Mentions"
-        ]
-    ]
-
-    for item in timeline:
-
-        rows.append(
-            [
-                item["year"],
-                str(
-                    item["mentions"]
-                )
-            ]
-        )
-
-    table = Table(
-        rows,
-        colWidths=[
-            2 * inch,
-            2 * inch
-        ]
-    )
-
-    table.setStyle(
-        TableStyle(
-            [
-                (
-                    "GRID",
-                    (0, 0),
-                    (-1, -1),
-                    0.5,
-                    colors.black
-                ),
-                (
-                    "BACKGROUND",
-                    (0, 0),
-                    (-1, 0),
-                    colors.lightgrey
-                )
-            ]
-        )
-    )
-
-    story.append(table)
-
-    story.append(
-        PageBreak()
-    )
-
-
-def add_key_facts(
-    story,
-    knowledge,
-    styles
-):
-
-    story.append(
-        paragraph(
-            "Key Facts",
-            styles["Heading1"]
-        )
-    )
-
-    add_rule(story)
-
-    facts = knowledge.get(
-        "facts",
-        []
-    )
-
-    bullets = []
-
-    for fact in facts[:40]:
-
-        bullets.append(
-            ListItem(
-                paragraph(
-                    fact,
-                    styles["BodyText"]
-                )
-            )
-        )
-
-    story.append(
-        ListFlowable(
-            bullets,
-            bulletType="bullet"
-        )
-    )
-
-    story.append(
-        PageBreak()
-    )
-    
 def add_image_gallery(
     story,
     knowledge,
@@ -508,8 +273,15 @@ def add_image_gallery(
 
     story.append(
         paragraph(
-            "Image Gallery",
+            "Chapter 2",
             styles["Heading1"]
+        )
+    )
+
+    story.append(
+        paragraph(
+            "Image Gallery",
+            styles["Heading2"]
         )
     )
 
@@ -527,29 +299,36 @@ def add_image_gallery(
                 continue
 
             try:
-                 with PILImage.open(image_path) as test:
-                      test.verify()
+
+                with PILImage.open(
+                    image_path
+                ) as img:
+
+                    img.verify()
+
             except Exception:
                 continue
-            
-            img = Image(
-                image_path,
-                width=4.5 * inch,
-                height=3 * inch
-            )     
 
-            story.append(img)
+            image = Image(
+                image_path,
+                width=4 * inch,
+                height=2.8 * inch
+            )
+
+            story.append(
+                image
+            )
 
             story.append(
                 Spacer(
                     1,
-                    10
+                    12
                 )
             )
 
             count += 1
 
-            if count >= 10:
+            if count >= 8:
                 break
 
         except Exception:
@@ -568,8 +347,15 @@ def add_background_section(
 
     story.append(
         paragraph(
-            "Background Information",
+            "Chapter 3",
             styles["Heading1"]
+        )
+    )
+
+    story.append(
+        paragraph(
+            "Career and Contributions",
+            styles["Heading2"]
         )
     )
 
@@ -653,14 +439,13 @@ def add_background_section(
             story.append(
                 Spacer(
                     1,
-                    5
+                    6
                 )
             )
 
     story.append(
         PageBreak()
     )
-
 
 def add_recent_developments(
     story,
@@ -670,8 +455,15 @@ def add_recent_developments(
 
     story.append(
         paragraph(
-            "Recent Developments",
+            "Chapter 4",
             styles["Heading1"]
+        )
+    )
+
+    story.append(
+        paragraph(
+            "Recent Developments and Current Work",
+            styles["Heading2"]
         )
     )
 
@@ -686,17 +478,18 @@ def add_recent_developments(
 
         story.append(
             paragraph(
-                "No recent developments found.",
+                "No recent developments available.",
                 styles["BodyText"]
             )
         )
 
+        story.append(
+            PageBreak()
+        )
+
         return
 
-    for index, article in enumerate(
-        news,
-        start=1
-    ):
+    for article in news:
 
         title = article.get(
             "title",
@@ -705,43 +498,43 @@ def add_recent_developments(
 
         story.append(
             paragraph(
-                f"{index}. {title}",
+                title,
                 styles["Heading2"]
             )
         )
 
-        meta = []
+        meta_parts = []
 
         if article.get("source"):
-            meta.append(
+            meta_parts.append(
                 article["source"]
             )
 
         if article.get("published"):
-            meta.append(
+            meta_parts.append(
                 article["published"]
             )
 
-        if meta:
+        if meta_parts:
 
             story.append(
                 paragraph(
-                    " | ".join(meta),
+                    " | ".join(meta_parts),
                     styles["Meta"]
                 )
             )
 
-        full_text = (
+        article_text = (
             article.get("full_text")
             or article.get("summary")
             or ""
         )
 
-        if full_text:
+        if article_text:
 
             story.append(
                 paragraph(
-                    full_text,
+                    article_text,
                     styles["BodyText"]
                 )
             )
@@ -749,121 +542,7 @@ def add_recent_developments(
         story.append(
             Spacer(
                 1,
-                10
-            )
-        )
-
-    story.append(
-        PageBreak()
-    )
-
-
-def add_analysis_section(
-    story,
-    knowledge,
-    styles
-):
-
-    story.append(
-        paragraph(
-            "Analysis",
-            styles["Heading1"]
-        )
-    )
-
-    add_rule(story)
-
-    stats = knowledge.get(
-        "statistics",
-        {}
-    )
-
-    if stats:
-
-        rows = [
-            [
-                "Metric",
-                "Value"
-            ]
-        ]
-
-        for key, value in stats.items():
-
-            rows.append(
-                [
-                    str(key),
-                    str(value)
-                ]
-            )
-
-        table = Table(
-            rows,
-            colWidths=[
-                3 * inch,
-                2 * inch
-            ]
-        )
-
-        table.setStyle(
-            TableStyle(
-                [
-                    (
-                        "GRID",
-                        (0, 0),
-                        (-1, -1),
-                        0.5,
-                        colors.black
-                    ),
-                    (
-                        "BACKGROUND",
-                        (0, 0),
-                        (-1, 0),
-                        colors.lightgrey
-                    )
-                ]
-            )
-        )
-
-        story.append(table)
-
-    keywords = knowledge.get(
-        "keywords",
-        []
-    )
-
-    if keywords:
-
-        story.append(
-            Spacer(
-                1,
-                15
-            )
-        )
-
-        story.append(
-            paragraph(
-                "Top Keywords",
-                styles["Heading2"]
-            )
-        )
-
-        bullet_items = []
-
-        for word in keywords:
-
-            bullet_items.append(
-                ListItem(
-                    paragraph(
-                        word,
-                        styles["BodyText"]
-                    )
-                )
-            )
-
-        story.append(
-            ListFlowable(
-                bullet_items,
-                bulletType="bullet"
+                12
             )
         )
 
@@ -887,7 +566,7 @@ def add_references(
 
     add_rule(story)
 
-    refs = []
+    references = []
 
     wiki = knowledge.get(
         "wiki",
@@ -896,7 +575,7 @@ def add_references(
 
     if wiki.get("url"):
 
-        refs.append(
+        references.append(
             wiki["url"]
         )
 
@@ -911,7 +590,7 @@ def add_references(
         )
 
         if url:
-            refs.append(url)
+            references.append(url)
 
     for article in knowledge.get(
         "articles",
@@ -923,15 +602,28 @@ def add_references(
         )
 
         if url:
-            refs.append(url)
+            references.append(url)
 
-    refs = list(
-        dict.fromkeys(refs)
+    references = list(
+        dict.fromkeys(
+            references
+        )
     )
+
+    if not references:
+
+        story.append(
+            paragraph(
+                "No references available.",
+                styles["BodyText"]
+            )
+        )
+
+        return
 
     bullets = []
 
-    for ref in refs:
+    for ref in references:
 
         bullets.append(
             ListItem(
@@ -978,10 +670,10 @@ def build_report(
     doc = SimpleDocTemplate(
         str(report_path),
         pagesize=A4,
-        rightMargin=0.7 * inch,
-        leftMargin=0.7 * inch,
-        topMargin=0.7 * inch,
-        bottomMargin=0.7 * inch
+        rightMargin=0.75 * inch,
+        leftMargin=0.75 * inch,
+        topMargin=0.75 * inch,
+        bottomMargin=0.75 * inch
     )
 
     styles = build_styles()
@@ -1000,7 +692,7 @@ def build_report(
         styles
     )
 
-    add_executive_summary(
+    add_introduction(
         story,
         knowledge,
         styles
@@ -1018,25 +710,7 @@ def build_report(
         styles
     )
 
-    add_timeline(
-        story,
-        knowledge,
-        styles
-    )
-
-    add_key_facts(
-        story,
-        knowledge,
-        styles
-    )
-
     add_recent_developments(
-        story,
-        knowledge,
-        styles
-    )
-
-    add_analysis_section(
         story,
         knowledge,
         styles

@@ -161,6 +161,9 @@ def main():
                 include_article_content=True
             )
 
+            # Keep only the most relevant news
+            news = news[:5]
+
         except NewsSourceError:
 
             news = []
@@ -183,7 +186,7 @@ def main():
 
         crawled_articles = crawler.crawl(
             seed_urls=seed_urls,
-            max_pages=15
+            max_pages=8
         )
 
         logging.info(
@@ -209,6 +212,19 @@ def main():
                 extracted_articles.append(
                     extracted
                 )
+
+        # Keep the richest articles
+        extracted_articles.sort(
+            key=lambda x: len(
+                x.get(
+                    "text",
+                    ""
+                )
+            ),
+            reverse=True
+        )
+
+        extracted_articles = extracted_articles[:10]
 
         logging.info(
             "Downloading images..."
@@ -263,6 +279,9 @@ def main():
             )
         )
 
+        # Keep only the best images
+        image_paths = image_paths[:8]
+
         logging.info(
             "Building knowledge base..."
         )
@@ -281,6 +300,37 @@ def main():
             builder.statistics(
                 knowledge
             )
+        )
+
+        # Report metadata
+        knowledge["report_metadata"] = {
+            "topic": topic,
+            "news_count": len(news),
+            "article_count": len(
+                extracted_articles
+            ),
+            "image_count": len(
+                image_paths
+            )
+        }
+
+        logging.info(
+            "Knowledge Base Summary"
+        )
+
+        logging.info(
+            "News Articles: %s",
+            len(news)
+        )
+
+        logging.info(
+            "Crawled Articles: %s",
+            len(extracted_articles)
+        )
+
+        logging.info(
+            "Images: %s",
+            len(image_paths)
         )
 
         logging.info(
