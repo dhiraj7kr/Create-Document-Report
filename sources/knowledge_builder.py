@@ -172,11 +172,7 @@ class KnowledgeBuilder:
 
         return timeline
 
-    def extract_facts(
-        self,
-        text,
-        max_facts=40
-    ):
+    def extract_facts(self, text, max_facts=200):
 
         sentences = re.split(
             r"(?<=[.!?])\s+",

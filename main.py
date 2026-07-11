@@ -1,7 +1,62 @@
 import argparse
 import logging
 import sys
+import json
+import requests
+import re
 from pathlib import Path
+
+def run_local_ai_formatting(json_payload_path, topic):
+    """
+    Sends the generated knowledge JSON to the active local Ollama instance
+    for deduplication and structured formatting.
+    """
+    logging.info("Initializing local AI optimization via Qwen2.5-Coder...")
+    
+    try:
+        with open(json_payload_path, "r", encoding="utf-8") as f:
+            knowledge = json.load(f)
+    except Exception as e:
+        logging.error("Failed to read JSON payload: %s", str(e))
+        return
+
+    # Directives to ensure formatting cleanliness and zero data repetition
+    system_prompt = (
+        "You are an expert analytical researcher and legal annotator. "
+        "Review the provided JSON dataset containing Wikipedia extracts, news events, and crawled web articles. "
+        "Consolidate and synthesize this data into a highly structured, dense, and clean Markdown dossier. "
+        "CRITICAL: Identify and eliminate all duplicate facts, overlapping news stories, or repeating paragraphs. "
+        "Organize the output into clear sections using professional Markdown headings."
+    )
+    
+    user_prompt = f"Topic Focus: {topic}\n\nRaw Knowledge Dataset:\n{json.dumps(knowledge, indent=2)}"
+    
+    ollama_url = "http://localhost:11434/api/generate"
+    payload = {
+        "model": "qwen2.5-coder:7b",
+        "prompt": f"{system_prompt}\n\n{user_prompt}",
+        "stream": False
+    }
+    
+    try:
+        # 120-second timeout to accommodate processing large text inputs on local hardware
+        response = requests.post(ollama_url, json=payload, timeout=120)
+        response.raise_for_status()
+        
+        ai_response = response.json().get("response", "")
+        
+        # Save the finalized, deduplicated report
+        output_path = json_payload_path.parent / f"{json_payload_path.stem}_Final_AI_Report.md"
+        with open(output_path, "w", encoding="utf-8") as out_file:
+            out_file.write(ai_response)
+            
+        logging.info("Optimized AI Markdown report successfully saved to: %s", output_path)
+        
+    except requests.exceptions.ConnectionError:
+        logging.error("Connection failed. Ensure Ollama is running in your system tray or background.")
+    except Exception as e:
+        logging.error("An error occurred during local LLM execution: %s", str(e))
+
 
 from sources.wikipedia_source import (
     get_wikipedia_content,
@@ -152,17 +207,12 @@ def main():
         logging.info(
             "Collecting news..."
         )
-
         try:
-
             news = get_news(
                 topic,
-                limit=args.news_limit,
+                limit=args.news_limit,  # Let the CLI argument control this (default is 10)
                 include_article_content=True
             )
-
-            # Keep only the most relevant news
-            news = news[:5]
 
         except NewsSourceError:
 
@@ -186,7 +236,7 @@ def main():
 
         crawled_articles = crawler.crawl(
             seed_urls=seed_urls,
-            max_pages=8
+            max_pages=30  # Increased for deeper data gathering
         )
 
         logging.info(
@@ -215,16 +265,9 @@ def main():
 
         # Keep the richest articles
         extracted_articles.sort(
-            key=lambda x: len(
-                x.get(
-                    "text",
-                    ""
-                )
-            ),
+            key=lambda x: len(x.get("text", "")),
             reverse=True
         )
-
-        extracted_articles = extracted_articles[:10]
 
         logging.info(
             "Downloading images..."
@@ -279,9 +322,6 @@ def main():
             )
         )
 
-        # Keep only the best images
-        image_paths = image_paths[:8]
-
         logging.info(
             "Building knowledge base..."
         )
@@ -334,7 +374,7 @@ def main():
         )
 
         logging.info(
-            "Generating PDF..."
+            "Generating PDF and Base JSON..."
         )
 
         report_path = build_report(
@@ -342,6 +382,16 @@ def main():
             knowledge=knowledge,
             output_dir=output_dir
         )
+        
+        # --- NEW: Trigger the local Ollama refinement pipeline ---
+        safe_name = re.sub(r"[^A-Za-z0-9_-]+", "_", topic)[:100]
+        json_file_path = output_dir / f"{safe_name}_knowledge.json"
+        
+        if json_file_path.exists():
+            run_local_ai_formatting(json_file_path, topic)
+        else:
+            logging.warning("Skipping AI formatting; raw JSON knowledge base was not located.")
+        # ---------------------------------------------------------
 
         print()
         print("=" * 60)
@@ -349,7 +399,7 @@ def main():
             "REPORT GENERATED SUCCESSFULLY"
         )
         print("=" * 60)
-        print(report_path)
+        print(f"PDF Location: {report_path}")
         print("=" * 60)
 
         return 0

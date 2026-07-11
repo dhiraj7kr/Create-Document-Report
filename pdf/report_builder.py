@@ -3,6 +3,8 @@ import re
 from datetime import datetime
 from pathlib import Path
 from html import escape
+import json
+import logging
 
 from PIL import Image as PILImage
 
@@ -661,6 +663,12 @@ def build_report(
         safe_filename(topic)
         + "_Report.pdf"
     )
+
+    llm_payload_path = output_path / f"{safe_filename(topic)}_knowledge.json"
+    with open(llm_payload_path, "w", encoding="utf-8") as f:
+        json.dump(knowledge, f, indent=4)
+
+    logging.info("Saved raw knowledge base for LLM to %s", llm_payload_path)
 
     report_path = (
         output_path
