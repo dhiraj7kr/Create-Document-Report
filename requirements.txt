@@ -14,3 +14,4 @@ tldextract
 cssselect
 feedfinder2
 jieba3k
+aiohttp
