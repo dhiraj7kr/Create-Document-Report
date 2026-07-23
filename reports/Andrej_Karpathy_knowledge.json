@@ -1,0 +1,308 @@
+{
+    "topic": "Andrej Karpathy",
+    "wiki": {
+        "title": "Andrej Karpathy",
+        "summary": "Andrej Karpathy (born 23 October 1986) is a Slovak-Canadian AI researcher, who co-founded and formerly worked at OpenAI, where he specialized in deep learning and computer vision. He also worked as the director of artificial intelligence and Autopilot Vision at Tesla, and in 2024 he founded Eureka Labs, an AI education platform. In 2026 he joined Anthropic as part of the pretraining team.",
+        "url": "https://en.wikipedia.org/wiki/Andrej_Karpathy",
+        "sections": [
+            {
+                "title": "Education and early life",
+                "text": "Karpathy was born in Bratislava, Czechoslovakia (now Slovakia), and moved with his family to Toronto when he was 15. He completed his Computer Science and Physics bachelor's degrees at University of Toronto in 2009 and his master's degree at University of British Columbia in 2011, where he worked on physically simulated figures (for example, a simulated runner or a simulated person in a crowd) with his adviser Michiel van de Panne. In 2006, Karpathy began posting videos on YouTube on his channel, badmephisto. He garnered fame by posting Rubik's cube tutorials which have been used by famous speedcubers such as Feliks Zemdegs. The channel has over 9 million views as of June 2025. Karpathy received a PhD from Stanford University in 2015 under the supervision of Fei-Fei Li, focusing on the intersection of natural language processing and computer vision, and deep learning models suited for this task.",
+                "children": []
+            },
+            {
+                "title": "Career and research",
+                "text": "He authored and was the primary instructor of the first deep learning course at Stanford, CS 231n: Convolutional Neural Networks for Visual Recognition. The course became one of the largest classes at Stanford, growing from 150 students in 2015 to 750 in 2017. Karpathy is a founding member of the artificial intelligence research group OpenAI, where he was a research scientist from 2015 to 2017. In June 2017 he became Tesla's director of artificial intelligence and reported to Elon Musk. He was named one of MIT Technology Review's Innovators Under 35 for 2020. After taking a several-months-long sabbatical from Tesla, he announced he was leaving the company in July 2022. As of February 2023, he makes YouTube videos on how to create artificial neural networks. On February 9, 2023, Karpathy announced he was returning to OpenAI. A year later on February 13, 2024, an OpenAI spokesperson confirmed that Karpathy had left OpenAI. In the same year, he was named one of Time Magazine's 100 Most Influential People in AI. On July 16, 2024, Karpathy announced on his X account that he started a new AI education company called Eureka Labs. Their first product was the AI course, LLM101n. He also has a broader educational effort, the \"Zero to Hero\" series on LLM fundamentals. The company also advocates for AI teaching assistants, a concept which has been criticized due to data privacy concerns and the removal of personal connection between teacher and student. In February 2025, Karpathy coined the term vibe coding to describe how AI tools allow hobbyists to construct apps and websites just by typing prompts. On May 19, 2026, he announced that he joined Anthropic via a statement on X, while the company stated that he will be leading a team for research in pretraining.",
+                "children": []
+            },
+            {
+                "title": "External links",
+                "text": "Official website of Eureka Labs Official GitHub account of Eureka Labs Andrej Karpathy at GitHub",
+                "children": []
+            }
+        ]
+    },
+    "news": [
+        {
+            "title": "Andrej Karpathy, Google and Garry Tan agree Markdown is the answer, but they're not solving the same problem - The New Stack",
+            "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9SN25qRmpJaXBOREVZZm9DSzlHYlRvZC1UWVB6R1ZJVGtQREZ3aDNhc2hoajZUWUtjVkxkWlA2N0w3QkpGZ09rT25Id1pMdkV3QW5NMndZaTMwWVdHVmg0?oc=5",
+            "published": "2026-07-06",
+            "source": "The New Stack",
+            "summary": "Andrej Karpathy, Google and Garry Tan agree Markdown is the answer, but they're not solving the same problem The New Stack",
+            "article_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9SN25qRmpJaXBOREVZZm9DSzlHYlRvZC1UWVB6R1ZJVGtQREZ3aDNhc2hoajZUWUtjVkxkWlA2N0w3QkpGZ09rT25Id1pMdkV3QW5NMndZaTMwWVdHVmg0?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "OpenAI co-founder Andrej Karpathy joins Anthropic\u2019s pre-training team - TechCrunch",
+            "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaF9JTmlDUzMtSlNFM3lhWVdTNFVjMjJtQXlYNXpUUVFOU3N6SWFUbW5wUGpoYVI3SWhuNDctQ2ljaWJjb0RRQ0pYMzZFNmFSdXF5UXFxUVowZTdMUm9HNlM3dk1OOEotR2FIQkIxMkNrdy1UOEZ4ZFRxQTNpbVJjNl9leGVQUFF5dndSU3BVdTd4RFlJLXZmOXRJT2c5aGYtNXFBeFBB?oc=5",
+            "published": "2026-05-19",
+            "source": "TechCrunch",
+            "summary": "OpenAI co-founder Andrej Karpathy joins Anthropic\u2019s pre-training team TechCrunch",
+            "article_url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaF9JTmlDUzMtSlNFM3lhWVdTNFVjMjJtQXlYNXpUUVFOU3N6SWFUbW5wUGpoYVI3SWhuNDctQ2ljaWJjb0RRQ0pYMzZFNmFSdXF5UXFxUVowZTdMUm9HNlM3dk1OOEotR2FIQkIxMkNrdy1UOEZ4ZFRxQTNpbVJjNl9leGVQUFF5dndSU3BVdTd4RFlJLXZmOXRJT2c5aGYtNXFBeFBB?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "OpenAI co-founder Andrej Karpathy joins Anthropic - Axios",
+            "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9UcWNHT21RRk15dzlSTTRBOGlOdmE2RHVFUndyS3lfcXpJV1lQQ2ZoTXF5VFlSZk9QLUJxNDJTQUM0c2RDLS1BQ3B6WXdiNUp1aDJEdXRGX25jQi1zdDVvVFprNG1iWWNLNGJpUzZuSFF5a3liUkZOSEt2dWY?oc=5",
+            "published": "2026-05-19",
+            "source": "Axios",
+            "summary": "OpenAI co-founder Andrej Karpathy joins Anthropic Axios",
+            "article_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9UcWNHT21RRk15dzlSTTRBOGlOdmE2RHVFUndyS3lfcXpJV1lQQ2ZoTXF5VFlSZk9QLUJxNDJTQUM0c2RDLS1BQ3B6WXdiNUp1aDJEdXRGX25jQi1zdDVvVFprNG1iWWNLNGJpUzZuSFF5a3liUkZOSEt2dWY?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "Anthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader - CNBC",
+            "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX3BaX2VoOXUxLXdIWm4tNWVHTmdob2NKeFpXeUR4dV9WNlZSc0pYeFZ4RlpyZHpOSnlheTV0WlVzRjUtYWVsU3VJNzdrdnUzdEI2NGhwT1gwaEZsRXpxQ1gyRVNvQ0JNUDlvNjdudHoxcmdIa0w4U1VkeHZrUWNMbUNteUZqV0xJZVZfeHNWdVhoOGxmSmI5aDU5VUxaOERFUTdibW1SS0RJd9IBrwFBVV95cUxOaUFIT1FQWlBnMXBYRHZZR1puZ0xGVUFUMzJWbU85dGdueDIzZU5rSGd5ZkRtbnNSRUVfZXM4ak9NcVZLclA5U2UwVFRQQUNNVnhwOEpYUmhsYl81NWpIX0QtdlRNVzdjQloxckRmNFhPNG1EMFhwUk9BeTF6c0t1VkhydFNIZVFrX2hrWjBtbmxWeFdpdklqX1JBUjc0b1laQkg1WDNfQzJLVzN5TjBv?oc=5",
+            "published": "2026-05-19",
+            "source": "CNBC",
+            "summary": "Anthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader CNBC",
+            "article_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX3BaX2VoOXUxLXdIWm4tNWVHTmdob2NKeFpXeUR4dV9WNlZSc0pYeFZ4RlpyZHpOSnlheTV0WlVzRjUtYWVsU3VJNzdrdnUzdEI2NGhwT1gwaEZsRXpxQ1gyRVNvQ0JNUDlvNjdudHoxcmdIa0w4U1VkeHZrUWNMbUNteUZqV0xJZVZfeHNWdVhoOGxmSmI5aDU5VUxaOERFUTdibW1SS0RJd9IBrwFBVV95cUxOaUFIT1FQWlBnMXBYRHZZR1puZ0xGVUFUMzJWbU85dGdueDIzZU5rSGd5ZkRtbnNSRUVfZXM4ak9NcVZLclA5U2UwVFRQQUNNVnhwOEpYUmhsYl81NWpIX0QtdlRNVzdjQloxckRmNFhPNG1EMFhwUk9BeTF6c0t1VkhydFNIZVFrX2hrWjBtbmxWeFdpdklqX1JBUjc0b1laQkg1WDNfQzJLVzN5TjBv?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "LLM Wikis Are Over-Engineered \u2014 I Replaced Mine With a Pure Python Compiler - Towards Data Science",
+            "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQYkVqQThCbmZFcXRCUVZMa1ZFZko3YWYzVXN6WEF6eXZ2R1oyamx3NUpJVTJ3SVhMMVY2ZEtDeFZJRFIzcGJlRnRoWVprRkhIRFZ5WFoyTVljMmF5NUVhTEY3S1F2NHhNTkJCcWlpYmg5amlDVHFTWnlaZFBidTdPLTR2bWpxMk9QOWpzejNyMmpfdVZXOHRwWUtyVkRVYUNrMjdJWVJ4TS0?oc=5",
+            "published": "2026-07-03",
+            "source": "Towards Data Science",
+            "summary": "LLM Wikis Are Over-Engineered \u2014 I Replaced Mine With a Pure Python Compiler Towards Data Science",
+            "article_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQYkVqQThCbmZFcXRCUVZMa1ZFZko3YWYzVXN6WEF6eXZ2R1oyamx3NUpJVTJ3SVhMMVY2ZEtDeFZJRFIzcGJlRnRoWVprRkhIRFZ5WFoyTVljMmF5NUVhTEY3S1F2NHhNTkJCcWlpYmg5amlDVHFTWnlaZFBidTdPLTR2bWpxMk9QOWpzejNyMmpfdVZXOHRwWUtyVkRVYUNrMjdJWVJ4TS0?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "OpenAI co-founder Andrej Karpathy joins Anthropic - Axios",
+            "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9UcWNHT21RRk15dzlSTTRBOGlOdmE2RHVFUndyS3lfcXpJV1lQQ2ZoTXF5VFlSZk9QLUJxNDJTQUM0c2RDLS1BQ3B6WXdiNUp1aDJEdXRGX25jQi1zdDVvVFprNG1iWWNLNGJpUzZuSFF5a3liUkZOSEt2dWY?oc=5",
+            "published": "2026-05-19",
+            "source": "Axios",
+            "summary": "OpenAI co-founder Andrej Karpathy joins Anthropic Axios",
+            "article_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9UcWNHT21RRk15dzlSTTRBOGlOdmE2RHVFUndyS3lfcXpJV1lQQ2ZoTXF5VFlSZk9QLUJxNDJTQUM0c2RDLS1BQ3B6WXdiNUp1aDJEdXRGX25jQi1zdDVvVFprNG1iWWNLNGJpUzZuSFF5a3liUkZOSEt2dWY?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "Anthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader - CNBC",
+            "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX3BaX2VoOXUxLXdIWm4tNWVHTmdob2NKeFpXeUR4dV9WNlZSc0pYeFZ4RlpyZHpOSnlheTV0WlVzRjUtYWVsU3VJNzdrdnUzdEI2NGhwT1gwaEZsRXpxQ1gyRVNvQ0JNUDlvNjdudHoxcmdIa0w4U1VkeHZrUWNMbUNteUZqV0xJZVZfeHNWdVhoOGxmSmI5aDU5VUxaOERFUTdibW1SS0RJd9IBrwFBVV95cUxOaUFIT1FQWlBnMXBYRHZZR1puZ0xGVUFUMzJWbU85dGdueDIzZU5rSGd5ZkRtbnNSRUVfZXM4ak9NcVZLclA5U2UwVFRQQUNNVnhwOEpYUmhsYl81NWpIX0QtdlRNVzdjQloxckRmNFhPNG1EMFhwUk9BeTF6c0t1VkhydFNIZVFrX2hrWjBtbmxWeFdpdklqX1JBUjc0b1laQkg1WDNfQzJLVzN5TjBv?oc=5",
+            "published": "2026-05-19",
+            "source": "CNBC",
+            "summary": "Anthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader CNBC",
+            "article_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX3BaX2VoOXUxLXdIWm4tNWVHTmdob2NKeFpXeUR4dV9WNlZSc0pYeFZ4RlpyZHpOSnlheTV0WlVzRjUtYWVsU3VJNzdrdnUzdEI2NGhwT1gwaEZsRXpxQ1gyRVNvQ0JNUDlvNjdudHoxcmdIa0w4U1VkeHZrUWNMbUNteUZqV0xJZVZfeHNWdVhoOGxmSmI5aDU5VUxaOERFUTdibW1SS0RJd9IBrwFBVV95cUxOaUFIT1FQWlBnMXBYRHZZR1puZ0xGVUFUMzJWbU85dGdueDIzZU5rSGd5ZkRtbnNSRUVfZXM4ak9NcVZLclA5U2UwVFRQQUNNVnhwOEpYUmhsYl81NWpIX0QtdlRNVzdjQloxckRmNFhPNG1EMFhwUk9BeTF6c0t1VkhydFNIZVFrX2hrWjBtbmxWeFdpdklqX1JBUjc0b1laQkg1WDNfQzJLVzN5TjBv?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "He coined 'vibe coding.' Now he says there's a 'growing gap' among AI users - Business Insider",
+            "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPR1ZaY1A1R1ktNjR5bDZ5NlhXSTl6Yzh4b0xKeUxhck9xaTlObHpuQVEyNGx1OV9PejBxTHY4NjFDeHFOZGV5TW10ZFJ6djVJbzFlQnJXeTc5RmRxWU1tMHUtY0YzR1ZqRHRuQkhTN1A5ckwtTGNoVEVfT1pmYXhwcHIxanRqUHlESzZF?oc=5",
+            "published": "2026-04-10",
+            "source": "Business Insider",
+            "summary": "He coined 'vibe coding.' Now he says there's a 'growing gap' among AI users Business Insider",
+            "article_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPR1ZaY1A1R1ktNjR5bDZ5NlhXSTl6Yzh4b0xKeUxhck9xaTlObHpuQVEyNGx1OV9PejBxTHY4NjFDeHFOZGV5TW10ZFJ6djVJbzFlQnJXeTc5RmRxWU1tMHUtY0YzR1ZqRHRuQkhTN1A5ckwtTGNoVEVfT1pmYXhwcHIxanRqUHlESzZF?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "\u2018Vibe Coding\u2019 Inventor Andrej Karpathy Has a New Term for A.I. Engineering - observer.com",
+            "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9XZjhnRi01QzBoNzRzMVRJVGRvQXVadDhzZWxJOFgxenR4OVlWSTRzOE5UVXZGbGpHSWN2bzVEUy1jVzlPLWt5X0dkbVRlalc0VDNHSXVkX2pxRUtIWnlfLThjWW9kalpLaEQ5eWZzcFpmdw?oc=5",
+            "published": "2026-02-09",
+            "source": "observer.com",
+            "summary": "\u2018Vibe Coding\u2019 Inventor Andrej Karpathy Has a New Term for A.I. Engineering observer.com",
+            "article_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9XZjhnRi01QzBoNzRzMVRJVGRvQXVadDhzZWxJOFgxenR4OVlWSTRzOE5UVXZGbGpHSWN2bzVEUy1jVzlPLWt5X0dkbVRlalc0VDNHSXVkX2pxRUtIWnlfLThjWW9kalpLaEQ5eWZzcFpmdw?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "Former Tesla AI Director Andrej Karpathy Joins Anthropic - Not a Tesla App",
+            "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSjJISndoSk9IOU5ackQtS0tsUDUwUFRHeHFQaHduQjJwMUVlX1VsRjZfMUZpUFFLWDlrLVFpcHRHTm12aDJqZi1DZTIxZ2s5bW56TEdsd3E5c0lYVVlxZGNXdURmcS1RRTdKN0wwT1pzZmFUd2RWaE9WQ2FXYnJsNjd4THlibTc0MTZwejhUSm00cE5SS1RSS2Q2aw?oc=5",
+            "published": "2026-05-19",
+            "source": "Not a Tesla App",
+            "summary": "Former Tesla AI Director Andrej Karpathy Joins Anthropic Not a Tesla App",
+            "article_url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSjJISndoSk9IOU5ackQtS0tsUDUwUFRHeHFQaHduQjJwMUVlX1VsRjZfMUZpUFFLWDlrLVFpcHRHTm12aDJqZi1DZTIxZ2s5bW56TEdsd3E5c0lYVVlxZGNXdURmcS1RRTdKN0wwT1pzZmFUd2RWaE9WQ2FXYnJsNjd4THlibTc0MTZwejhUSm00cE5SS1RSS2Q2aw?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "Influential AI researcher Andrej Karpathy announces he's joining Anthropic - VentureBeat",
+            "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxONHpQYy1hbGl1MzFHNW5JbnlhOHVqR185WEV5R0NYVTdnR3ZTNUF6MGJXRkp1QVhrNWp2anlZM0NjTEs1MVlqZy1WT3djdlUxa3VmdXhRS21DQzVkUW95TXpOUnFpNlU4Z0pSajBlei1XYl9OY014bjhGcHJOazZkM0JlMzZILWVBckE?oc=5",
+            "published": "2026-05-19",
+            "source": "VentureBeat",
+            "summary": "Influential AI researcher Andrej Karpathy announces he's joining Anthropic VentureBeat",
+            "article_url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxONHpQYy1hbGl1MzFHNW5JbnlhOHVqR185WEV5R0NYVTdnR3ZTNUF6MGJXRkp1QVhrNWp2anlZM0NjTEs1MVlqZy1WT3djdlUxa3VmdXhRS21DQzVkUW95TXpOUnFpNlU4Z0pSajBlei1XYl9OY014bjhGcHJOazZkM0JlMzZILWVBckE?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "Anthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader - The Tech Buzz",
+            "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZUZrckM3MHJLRkltSml1d3VxanQzeGctTnlYcXFYQ0l4Y3BncXFlcmM1ZU56alY3eGJiVDlhWkdqNmloVUY2NDJ2a3ctNkxudUFuU2psLWdWaG9tSjJMQkd0THhuMmpzWTd4aXV5dGFUei1GMmY4bTcxb1VKbGpIWlp2a09nRDZpODJ6X2dmbzFuemtmRkxWOWVOUmx0T3pPcGRjcThRck8?oc=5",
+            "published": "2026-05-19",
+            "source": "The Tech Buzz",
+            "summary": "Anthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader The Tech Buzz",
+            "article_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZUZrckM3MHJLRkltSml1d3VxanQzeGctTnlYcXFYQ0l4Y3BncXFlcmM1ZU56alY3eGJiVDlhWkdqNmloVUY2NDJ2a3ctNkxudUFuU2psLWdWaG9tSjJMQkd0THhuMmpzWTd4aXV5dGFUei1GMmY4bTcxb1VKbGpIWlp2a09nRDZpODJ6X2dmbzFuemtmRkxWOWVOUmx0T3pPcGRjcThRck8?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "Andrej Karpathy Joins Anthropic to Lead Claude Pre-\u2026 - StartupHub.ai",
+            "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQLTN6OGNlb01XUXIxb1JMWjhKTzBQT2hXSWQ2WnJOdXFGNmxFbmVINm1YajF5LVpWUEFkTnZKX1N0UDhMclh2ckJMUEhYNkd6MnpLYk1MdmJVNXZXMldqMUNPdGFIc21hUVpIcWxNQ1VnRDVROHo3R2ptYnExMTlvS2p2MUZRX05jN0oyenM2WEJON0tGR2ZkMmlXSXdEcER4SnBCYUl0SnU?oc=5",
+            "published": "2026-05-31",
+            "source": "StartupHub.ai",
+            "summary": "Andrej Karpathy Joins Anthropic to Lead Claude Pre-\u2026 StartupHub.ai",
+            "article_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQLTN6OGNlb01XUXIxb1JMWjhKTzBQT2hXSWQ2WnJOdXFGNmxFbmVINm1YajF5LVpWUEFkTnZKX1N0UDhMclh2ckJMUEhYNkd6MnpLYk1MdmJVNXZXMldqMUNPdGFIc21hUVpIcWxNQ1VnRDVROHo3R2ptYnExMTlvS2p2MUZRX05jN0oyenM2WEJON0tGR2ZkMmlXSXdEcER4SnBCYUl0SnU?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "\ud83d\udd2e Autoresearch and the experimental society - exponentialview.co",
+            "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBfRm9XUEFxOXJJX3dVX1BFWnlzbGdSdVg4UndsY3IwNEtkSS1zaUdkSmJWekFzZ1dxT2wwbFBOcHU3NThsWGRsQ2E4Z1EzRkVKM2llVy13NHhoOFUyZUVmM3p0MFhPRGc4V05PX2NIczZ5UDhvdHFfVzRFQ0tvaVE?oc=5",
+            "published": "2026-04-02",
+            "source": "exponentialview.co",
+            "summary": "\ud83d\udd2e Autoresearch and the experimental society exponentialview.co",
+            "article_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBfRm9XUEFxOXJJX3dVX1BFWnlzbGdSdVg4UndsY3IwNEtkSS1zaUdkSmJWekFzZ1dxT2wwbFBOcHU3NThsWGRsQ2E4Z1EzRkVKM2llVy13NHhoOFUyZUVmM3p0MFhPRGc4V05PX2NIczZ5UDhvdHFfVzRFQ0tvaVE?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        },
+        {
+            "title": "Andrej Karpathy's 630-line Python script ran 50 experiments overnight without any human input - The New Stack",
+            "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA3TWZ4TEJrdENCUmU4STQ2YnZLOW9BcUoyM0h6RUdGQk4tS0pzNVVsR1V6c2RydDlvSW5XTzZoNnI5TEQ2VWFjWlQ2a0Z5UWp6WmhIYVNfZDZJMWFPd0hYZldVU3FvTmJoWW4w?oc=5",
+            "published": "2026-03-14",
+            "source": "The New Stack",
+            "summary": "Andrej Karpathy's 630-line Python script ran 50 experiments overnight without any human input The New Stack",
+            "article_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA3TWZ4TEJrdENCUmU4STQ2YnZLOW9BcUoyM0h6RUdGQk4tS0pzNVVsR1V6c2RydDlvSW5XTzZoNnI5TEQ2VWFjWlQ2a0Z5UWp6WmhIYVNfZDZJMWFPd0hYZldVU3FvTmJoWW4w?oc=5",
+            "article_title": "",
+            "full_text": "",
+            "content_status": "Article content fetch was disabled."
+        }
+    ],
+    "articles": [],
+    "images": [
+        "images/0d17cead-1b60-4d85-8f8f-0954b546bd44.png"
+    ],
+    "keywords": [
+        "karpathy",
+        "andrej",
+        "openai",
+        "anthropic",
+        "tesla",
+        "founder",
+        "joins",
+        "artificial",
+        "eureka",
+        "labs",
+        "announced",
+        "company",
+        "february",
+        "former",
+        "worked",
+        "where",
+        "deep",
+        "learning",
+        "computer",
+        "vision"
+    ],
+    "timeline": [
+        {
+            "year": "1986",
+            "mentions": 1
+        },
+        {
+            "year": "2006",
+            "mentions": 1
+        },
+        {
+            "year": "2009",
+            "mentions": 1
+        },
+        {
+            "year": "2011",
+            "mentions": 1
+        },
+        {
+            "year": "2015",
+            "mentions": 3
+        },
+        {
+            "year": "2017",
+            "mentions": 3
+        },
+        {
+            "year": "2020",
+            "mentions": 1
+        },
+        {
+            "year": "2022",
+            "mentions": 1
+        },
+        {
+            "year": "2023",
+            "mentions": 2
+        },
+        {
+            "year": "2024",
+            "mentions": 3
+        },
+        {
+            "year": "2025",
+            "mentions": 2
+        },
+        {
+            "year": "2026",
+            "mentions": 2
+        }
+    ],
+    "facts": [
+        "Andrej Karpathy (born 23 October 1986) is a Slovak-Canadian AI researcher, who co-founded and formerly worked at OpenAI, where he specialized in deep learning and computer vision.",
+        "He also worked as the director of artificial intelligence and Autopilot Vision at Tesla, and in 2024 he founded Eureka Labs, an AI education platform.",
+        "In 2026 he joined Anthropic as part of the pretraining team.",
+        "Karpathy was born in Bratislava, Czechoslovakia (now Slovakia), and moved with his family to Toronto when he was 15.",
+        "He completed his Computer Science and Physics bachelor's degrees at University of Toronto in 2009 and his master's degree at University of British Columbia in 2011, where he worked on physically simulated figures (for example, a simulated runner or a simulated person in a crowd) with his adviser Michiel van de Panne.",
+        "In 2006, Karpathy began posting videos on YouTube on his channel, badmephisto.",
+        "He garnered fame by posting Rubik's cube tutorials which have been used by famous speedcubers such as Feliks Zemdegs.",
+        "Karpathy received a PhD from Stanford University in 2015 under the supervision of Fei-Fei Li, focusing on the intersection of natural language processing and computer vision, and deep learning models suited for this task.",
+        "He authored and was the primary instructor of the first deep learning course at Stanford, CS 231n: Convolutional Neural Networks for Visual Recognition.",
+        "The course became one of the largest classes at Stanford, growing from 150 students in 2015 to 750 in 2017.",
+        "Karpathy is a founding member of the artificial intelligence research group OpenAI, where he was a research scientist from 2015 to 2017.",
+        "In June 2017 he became Tesla's director of artificial intelligence and reported to Elon Musk.",
+        "He was named one of MIT Technology Review's Innovators Under 35 for 2020.",
+        "After taking a several-months-long sabbatical from Tesla, he announced he was leaving the company in July 2022.",
+        "As of February 2023, he makes YouTube videos on how to create artificial neural networks.",
+        "On February 9, 2023, Karpathy announced he was returning to OpenAI.",
+        "A year later on February 13, 2024, an OpenAI spokesperson confirmed that Karpathy had left OpenAI.",
+        "In the same year, he was named one of Time Magazine's 100 Most Influential People in AI.",
+        "On July 16, 2024, Karpathy announced on his X account that he started a new AI education company called Eureka Labs.",
+        "He also has a broader educational effort, the \"Zero to Hero\" series on LLM fundamentals.",
+        "The company also advocates for AI teaching assistants, a concept which has been criticized due to data privacy concerns and the removal of personal connection between teacher and student.",
+        "In February 2025, Karpathy coined the term vibe coding to describe how AI tools allow hobbyists to construct apps and websites just by typing prompts.",
+        "On May 19, 2026, he announced that he joined Anthropic via a statement on X, while the company stated that he will be leading a team for research in pretraining."
+    ],
+    "full_text": "Andrej Karpathy (born 23 October 1986) is a Slovak-Canadian AI researcher, who co-founded and formerly worked at OpenAI, where he specialized in deep learning and computer vision. He also worked as the director of artificial intelligence and Autopilot Vision at Tesla, and in 2024 he founded Eureka Labs, an AI education platform. In 2026 he joined Anthropic as part of the pretraining team.\n\nKarpathy was born in Bratislava, Czechoslovakia (now Slovakia), and moved with his family to Toronto when he was 15. He completed his Computer Science and Physics bachelor's degrees at University of Toronto in 2009 and his master's degree at University of British Columbia in 2011, where he worked on physically simulated figures (for example, a simulated runner or a simulated person in a crowd) with his adviser Michiel van de Panne. In 2006, Karpathy began posting videos on YouTube on his channel, badmephisto. He garnered fame by posting Rubik's cube tutorials which have been used by famous speedcubers such as Feliks Zemdegs. The channel has over 9 million views as of June 2025. Karpathy received a PhD from Stanford University in 2015 under the supervision of Fei-Fei Li, focusing on the intersection of natural language processing and computer vision, and deep learning models suited for this task.\n\nHe authored and was the primary instructor of the first deep learning course at Stanford, CS 231n: Convolutional Neural Networks for Visual Recognition. The course became one of the largest classes at Stanford, growing from 150 students in 2015 to 750 in 2017. Karpathy is a founding member of the artificial intelligence research group OpenAI, where he was a research scientist from 2015 to 2017. In June 2017 he became Tesla's director of artificial intelligence and reported to Elon Musk. He was named one of MIT Technology Review's Innovators Under 35 for 2020. After taking a several-months-long sabbatical from Tesla, he announced he was leaving the company in July 2022. As of February 2023, he makes YouTube videos on how to create artificial neural networks. On February 9, 2023, Karpathy announced he was returning to OpenAI. A year later on February 13, 2024, an OpenAI spokesperson confirmed that Karpathy had left OpenAI. In the same year, he was named one of Time Magazine's 100 Most Influential People in AI. On July 16, 2024, Karpathy announced on his X account that he started a new AI education company called Eureka Labs. Their first product was the AI course, LLM101n. He also has a broader educational effort, the \"Zero to Hero\" series on LLM fundamentals. The company also advocates for AI teaching assistants, a concept which has been criticized due to data privacy concerns and the removal of personal connection between teacher and student. In February 2025, Karpathy coined the term vibe coding to describe how AI tools allow hobbyists to construct apps and websites just by typing prompts. On May 19, 2026, he announced that he joined Anthropic via a statement on X, while the company stated that he will be leading a team for research in pretraining.\n\nOfficial website of Eureka Labs Official GitHub account of Eureka Labs Andrej Karpathy at GitHub\n\n\n\nAndrej Karpathy, Google and Garry Tan agree Markdown is the answer, but they're not solving the same problem The New Stack\n\n\n\nOpenAI co-founder Andrej Karpathy joins Anthropic\u2019s pre-training team TechCrunch\n\n\n\nOpenAI co-founder Andrej Karpathy joins Anthropic Axios\n\n\n\nAnthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader CNBC\n\n\n\nLLM Wikis Are Over-Engineered \u2014 I Replaced Mine With a Pure Python Compiler Towards Data Science\n\n\n\nOpenAI co-founder Andrej Karpathy joins Anthropic Axios\n\n\n\nAnthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader CNBC\n\n\n\nHe coined 'vibe coding.' Now he says there's a 'growing gap' among AI users Business Insider\n\n\n\n\u2018Vibe Coding\u2019 Inventor Andrej Karpathy Has a New Term for A.I. Engineering observer.com\n\n\n\nFormer Tesla AI Director Andrej Karpathy Joins Anthropic Not a Tesla App\n\n\n\nInfluential AI researcher Andrej Karpathy announces he's joining Anthropic VentureBeat\n\n\n\nAnthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader The Tech Buzz\n\n\n\nAndrej Karpathy Joins Anthropic to Lead Claude Pre-\u2026 StartupHub.ai\n\n\n\n\ud83d\udd2e Autoresearch and the experimental society exponentialview.co\n\n\n\nAndrej Karpathy's 630-line Python script ran 50 experiments overnight without any human input The New Stack",
+    "statistics": {
+        "articles": 0,
+        "news": 15,
+        "images": 1,
+        "keywords": 20,
+        "facts": 23,
+        "characters": 4462
+    },
+    "report_metadata": {
+        "topic": "Andrej Karpathy",
+        "news_count": 15,
+        "article_count": 0,
+        "image_count": 1
+    }
+}
